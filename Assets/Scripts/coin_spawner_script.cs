@@ -16,7 +16,6 @@ public class coin_spawner_script : MonoBehaviour
     {
         if (timer < spawnRate)
         {
-          
             timer = timer + Time.deltaTime;
         }
         else

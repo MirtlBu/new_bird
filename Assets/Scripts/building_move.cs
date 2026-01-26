@@ -14,8 +14,7 @@ public class building_move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        transform.position = transform.position + (Vector3.left * gameSpeed.buildingSpeed) * Time.deltaTime;
+        transform.position = transform.position + (Vector3.left * gameSpeed.speed) * Time.deltaTime;
         if( transform.position.x < deadZone)
         { 
             Destroy(gameObject);

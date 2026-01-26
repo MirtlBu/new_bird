@@ -12,14 +12,12 @@ public class BirdCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit tag: " + collision.gameObject.tag);
         if (collision.CompareTag("building_counter"))
         {
             buildingCounter = buildingCounter +1;
-            Debug.Log("counter: " + buildingCounter);
             if (buildingCounter > 5)
             {
-               gameSpeed.IncreaseSpeed(2);
+               gameSpeed.IncreaseSpeed(1 / 2);
                buildingCounter = 0;
             }
         }   

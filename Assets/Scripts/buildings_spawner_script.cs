@@ -6,11 +6,10 @@ public class buildings_spawner_script : MonoBehaviour
     public Sprite[] buildingSprites;
     public float spawnRate = 2f;
     private float timer = 0f;
-    private float lastSpawnX;
+    private GameObject lastSpawnedBuilding;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        lastSpawnX = transform.position.x;
         spawnBuilding();
     }
 
@@ -35,15 +34,26 @@ public class buildings_spawner_script : MonoBehaviour
         // choose random sprite
         SpriteRenderer sr = newBuilding.GetComponentInChildren<SpriteRenderer>();
         sr.sprite = buildingSprites[Random.Range(0, buildingSprites.Length)];
-        //new buildings width
-        float buildingWidth = sr.bounds.size.x;
-        //Debug.Log("building " + buildingWidth);
-        //random
-        float[] distances = {buildingWidth/4, buildingWidth/2, buildingWidth, buildingWidth * 2};
-        float distance = distances[Random.Range(0, distances.Length)];
-        float newX = lastSpawnX + distance;
 
-        newBuilding.transform.position = new Vector3(newX, transform.position.y, 0f);
-        lastSpawnX = newX;
+        //new buildings width and height
+        float buildingWidth = sr.sprite.bounds.size.x;
+        float buildingHeight = sr.sprite.bounds.size.y;
+
+        BoxCollider2D col = sr.GetComponentInChildren<BoxCollider2D>();
+        col.size = sr.sprite.bounds.size;
+
+        col.offset = new Vector2(0, buildingHeight / 2);
+        
+        //random
+        float[] distances = { buildingWidth/2, buildingWidth, buildingWidth * 1.5f};
+        float distance = distances[Random.Range(0, distances.Length)];
+        float newX = transform.position.x;
+        if (lastSpawnedBuilding != null)
+        {
+            newX = lastSpawnedBuilding.transform.position.x + distance;
+        }
+
+        newBuilding.transform.position = new Vector2(newX, transform.position.y);
+        lastSpawnedBuilding = newBuilding;
     }
 }
