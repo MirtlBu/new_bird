@@ -45,7 +45,7 @@ public class buildings_spawner_script : MonoBehaviour
         col.offset = new Vector2(0, buildingHeight / 2);
         
         //random
-        float[] distances = { buildingWidth/2, buildingWidth, buildingWidth * 1.5f};
+        float[] distances = {buildingWidth/2, buildingWidth, buildingWidth * 1.5f};
         float distance = distances[Random.Range(0, distances.Length)];
         float newX = transform.position.x;
         if (lastSpawnedBuilding != null)

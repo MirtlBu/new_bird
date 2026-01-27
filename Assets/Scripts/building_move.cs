@@ -15,7 +15,7 @@ public class building_move : MonoBehaviour
     void Update()
     {
         transform.position = transform.position + (Vector3.left * gameSpeed.speed) * Time.deltaTime;
-        if( transform.position.x < deadZone)
+        if(transform.position.x < deadZone)
         { 
             Destroy(gameObject);
         }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
-public class main_menu_script : MonoBehaviour
+public class next_level_script : MonoBehaviour
 {
     private UIDocument document;
     private Button button;
@@ -10,7 +10,7 @@ public class main_menu_script : MonoBehaviour
     private void Awake()
     {
         document = GetComponent<UIDocument>();
-        button = document.rootVisualElement.Q<Button>("start");
+        button = document.rootVisualElement.Q<Button>("next");
 
         button.RegisterCallback<ClickEvent>(OnPlayGameClick);
     }
