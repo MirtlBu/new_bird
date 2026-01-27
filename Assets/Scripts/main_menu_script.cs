@@ -1,24 +1,28 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class main_menu_script : MonoBehaviour
 {
     private UIDocument document;
     private Button button;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void StarAwaket()
+
+    private void Awake()
     {
         document = GetComponent<UIDocument>();
-        button = document.rootVisualElement.Q("start") as Button;
+        button = document.rootVisualElement.Q<Button>("start");
+
         button.RegisterCallback<ClickEvent>(OnPlayGameClick);
     }
 
-   private void OnDisable()
+    private void OnDisable()
     {
-        button.UnregisterCallback<ClickEvent>(OnPlayGameClick);
+        button?.UnregisterCallback<ClickEvent>(OnPlayGameClick);
     }
-   private void OnPlayGameClick(ClickEvent evt)
+
+    private void OnPlayGameClick(ClickEvent evt)
     {
         Debug.Log("Start pressed");
+        SceneManager.LoadScene("level");
     }
 }
