@@ -9,8 +9,24 @@ public class bird_script : MonoBehaviour
     public Vector3 startOffScreenPos;   
     public Vector3 startOnScreenPos; 
     public float entryTime = 1f;
-    public float leaveTime = 2f;         
+    public float leaveTime = 2f;
+    private PlayerInputActions input;      
     private bool canControl = false;
+
+    private void Awake()
+    {
+        input = new PlayerInputActions();
+    }
+
+    private void OnEnable()
+    {
+        input.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        input.Player.Disable();
+    }
     void Start()
     {
         bird.bodyType = RigidbodyType2D.Kinematic; //fysics off
@@ -20,7 +36,7 @@ public class bird_script : MonoBehaviour
     void Update()
     {
         if (!canControl) return;
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (input.Player.Flap.WasPressedThisFrame())
         {
             bird.linearVelocity = Vector2.up * strength;
         }

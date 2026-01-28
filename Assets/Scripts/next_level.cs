@@ -7,7 +7,7 @@ public class next_level_script : MonoBehaviour
     private UIDocument document;
     private Button button;
 
-    private void Start()
+    private void OnEnable()
     {
         document = GetComponent<UIDocument>();
         button = document.rootVisualElement.Q<Button>("next");
