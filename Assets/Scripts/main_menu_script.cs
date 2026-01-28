@@ -7,8 +7,9 @@ public class main_menu_script : MonoBehaviour
     private UIDocument document;
     private Button button;
 
-    private void Awake()
+    private void Start()
     {
+        //Debug.Log("main menu");
         document = GetComponent<UIDocument>();
         button = document.rootVisualElement.Q<Button>("start");
 
