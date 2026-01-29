@@ -3,6 +3,6 @@
     <ui:VisualElement name="top" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center; align-content: center; -unity-text-align: middle-center; flex-direction: column;">
         <ui:Image source="project://database/Assets/Sprites/stuff/bird1.png?fileID=5849526724001025608&amp;guid=741e022d5c07746f29b6baadf024051f&amp;type=3#bird1_0" name="Image" style="width: 30%; height: 30%; margin-bottom: 100px;"/>
         <ui:Label text="This is Pekka. He’s a bird, and he wants to go on vacation &#10;to Spain. Help him raise money for the trip." class="h1" style="font-size: 70px; align-self: center; -unity-text-align: middle-center; width: auto; height: auto; margin-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 100px; padding-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0;"/>
-        <ui:Button text="Start!" name="start" class="button" style="align-self: center;"/>
+        <ui:Button text="Start!" name="start1" class="button" style="align-self: center;"/>
     </ui:VisualElement>
 </ui:UXML>
