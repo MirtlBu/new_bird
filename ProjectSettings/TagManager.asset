@@ -18,10 +18,10 @@ TagManager:
   - UI
   - bird
   - building_counter
-  - 
-  - 
-  - 
-  - 
+  - background
+  - cloud_far
+  - cloud_near
+  - wave
   - 
   - 
   - 
@@ -45,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 1346693725
     locked: 0
   m_RenderingLayers:
   - Default

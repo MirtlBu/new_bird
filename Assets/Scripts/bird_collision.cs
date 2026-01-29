@@ -20,7 +20,7 @@ public class BirdCollision : MonoBehaviour
         {
             buildingCounter = buildingCounter +1;
             
-            if (buildingCounter > 3)
+            if (buildingCounter > 10)
             {
               StartCoroutine(EndLevel());
             }
