@@ -27,7 +27,6 @@ public class coin_spawner_script : MonoBehaviour
     }
     void spawnCoin()
     {
-         // screen coordinates
         float minY = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + 2f;
         float maxY = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - 1f;
 
@@ -43,9 +42,16 @@ public class coin_spawner_script : MonoBehaviour
 
             if (hit == null)
             {
-                Instantiate(coins_moving, spawnPos, Quaternion.identity);
+                GameObject coin = Instantiate(coins_moving, spawnPos, Quaternion.identity);
+                Animator anim = coin.GetComponent<Animator>();
+                if (anim != null)
+                {
+                    anim.Play("coin_animation");
+                }
+
                 return;
             }
         }
+        
     }
 }
