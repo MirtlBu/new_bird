@@ -11,7 +11,7 @@ public class about : MonoBehaviour
     private void Start()
     {
         document = GetComponent<UIDocument>();
-        button = document.rootVisualElement.Q<Button>("start1");
+        button = document.rootVisualElement.Q<Button>("confirmButton");
 
         button.RegisterCallback<ClickEvent>(OnPlayGameClick);
     }

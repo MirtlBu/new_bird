@@ -4,8 +4,8 @@
 .h1 {
     align-items: center;
     justify-content: center;
-    font-size: 140px;
-    -unity-text-align: middle-left;
+    font-size: 200px;
+    -unity-text-align: middle-center;
     align-content: center;
     right: auto;
     bottom: auto;

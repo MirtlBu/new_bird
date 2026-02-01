@@ -9,10 +9,6 @@ public class gameOnload : MonoBehaviour
     {
         SceneController.Instance.LoadMainMenu();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
+   
 }
