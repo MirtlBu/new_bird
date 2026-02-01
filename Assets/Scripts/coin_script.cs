@@ -4,7 +4,6 @@ public class CoinMove : MonoBehaviour
 {
     
     public float deadZone = -45;
-    public int value = 1;
     private GameSpeed gameSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +15,7 @@ public class CoinMove : MonoBehaviour
     void Update()
     {
         transform.position = transform.position + (Vector3.left * gameSpeed.speed) * Time.deltaTime;
-        if( transform.position.x < deadZone)
+        if(transform.position.x < deadZone)
         { 
             Destroy(gameObject);
         }
@@ -24,14 +23,9 @@ public class CoinMove : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("bird"))
-        {
-            score_script score = GameObject.FindGameObjectWithTag("score").GetComponent<score_script>();
-
-            score.addScore();
-
-            Destroy(gameObject);
-        }
+       if (!collision.CompareTag("bird")) return;
+        PlayerData.Instance.score += 1;          
+        Destroy(gameObject);
     }
 
    

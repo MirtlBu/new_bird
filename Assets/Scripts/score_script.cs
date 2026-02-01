@@ -5,19 +5,10 @@ using TMPro;
 
 public class score_script : MonoBehaviour
 {
-   public int playerScore;
-   public TMP_Text scoreText;
+    public TMP_Text scoreText;
 
-   [ContextMenu("Change Score")]
-
-   public void addScore()
+    void Update()
     {
-        playerScore = playerScore + 1;
-        scoreText.text = "Score: " + playerScore.ToString();
-    }
-    public void subtractScore()
-    {
-        playerScore = playerScore - 1;
-        scoreText.text = "Score: " + playerScore.ToString();
+        scoreText.text = $"Score: {PlayerData.Instance.score}";
     }
 }
