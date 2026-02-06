@@ -9,35 +9,38 @@ public class BirdCollision : MonoBehaviour
     public bird_script bird;
     private bool levelEnding = false;
     private bool hasEnteredScreen = false;
+    private Renderer birdRenderer;
 
     
     void Start()
     {
         gameSpeed = FindObjectOfType<GameSpeed>();
         bird = GetComponent<bird_script>();
+        birdRenderer = GetComponent<Renderer>();
     }
     void Update()
     {
         if (levelEnding) return;
-        Vector3 viewportPos = Camera.main.WorldToViewportPoint(transform.position);
 
-        if (!hasEnteredScreen)
+    Bounds bounds = birdRenderer.bounds;
+
+    Vector3 minViewport = Camera.main.WorldToViewportPoint(bounds.min);
+    Vector3 maxViewport = Camera.main.WorldToViewportPoint(bounds.max);
+    if (!hasEnteredScreen)
+    {
+        if (maxViewport.x >= 0 && minViewport.x <= 1 &&
+            maxViewport.y >= 0 && minViewport.y <= 1)
         {
-            if (viewportPos.x >= 0 && viewportPos.x <= 1 &&
-                viewportPos.y >= 0 && viewportPos.y <= 1)
-            {
-                hasEnteredScreen = true;
-            }
+            hasEnteredScreen = true;
         }
-        else
-        {
-            if (viewportPos.x < 0 || viewportPos.x > 1 ||
-                viewportPos.y < 0 || viewportPos.y > 1)
-            {
-                levelEnding = true;
-                SceneManager.LoadScene("game_over");
-            }
-        }
+        return;
+    }
+    if (maxViewport.x < 0 || minViewport.x > 1 ||
+        maxViewport.y < 0 || minViewport.y > 1)
+    {
+        levelEnding = true;
+        SceneManager.LoadScene("game_over");
+    }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
