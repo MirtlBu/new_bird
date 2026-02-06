@@ -24,9 +24,9 @@
     font-size: 72px;
     width: 500px;
     -unity-text-align: middle-center;
-    align-items: flex-start;
-    justify-content: center;
-    align-self: flex-start;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: center;
     align-content: center;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;

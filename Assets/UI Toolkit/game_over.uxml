@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/main_menu.uss?fileID=7433441132597879392&amp;guid=02524805e6b80449c902084b1bacfb4e&amp;type=3#main_menu"/>
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; -unity-text-align: upper-center; align-self: center; align-content: center; justify-content: center; align-items: center;">
+        <ui:Image source="" style="width: 50%; align-content: center; align-self: center; justify-content: center; align-items: center; height: 30%; margin-bottom: 0;"/>
+        <ui:Label text="The bord was defeated, but he doesn’t give up." class="h1" style="font-size: 48px;"/>
+        <ui:Button text="Continue" name="continue" class="button"/>
+    </ui:VisualElement>
+</ui:UXML>
