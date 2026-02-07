@@ -11,6 +11,7 @@ public class BirdCollision : MonoBehaviour
     private bool hasEnteredScreen = false;
     private Renderer birdRenderer;
     private PowerUpSpawner powerUpSpawner;
+    private int powerUpSpawnAt;
 
     void Start()
     {
@@ -18,9 +19,7 @@ public class BirdCollision : MonoBehaviour
         bird = GetComponent<bird_script>();
         birdRenderer = GetComponent<Renderer>();
         powerUpSpawner = FindObjectOfType<PowerUpSpawner>();
-
-        if (powerUpSpawner == null)
-            Debug.LogWarning("PowerUpSpawner not found in scene!");
+        powerUpSpawnAt = Random.Range(3, 9);
     }
 
     void Update()
@@ -55,23 +54,20 @@ public class BirdCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!hasEnteredScreen) return; // игнорируем пока птица не на экране
+        if (!hasEnteredScreen) return;
 
         if (collision.CompareTag("building_counter"))
         {
             buildingCounter++;
-
-            // Конец уровня после 10 домов
             if (buildingCounter > 10)
             {
                 StartCoroutine(EndLevel());
             }
 
-            // Спавн power-up после 5 домов, один раз
-            if (buildingCounter == 3 && powerUpSpawner != null && !powerUpSpawner.HasSpawned)
+            if (buildingCounter == powerUpSpawnAt && powerUpSpawner != null && !powerUpSpawner.HasSpawned)
             {
                 powerUpSpawner.TrySpawnPowerUp();
-                Debug.Log("Power-up spawned after 5 buildings!");
+                Debug.Log("Power-up spawned at building " + buildingCounter);
             }
         }
     }

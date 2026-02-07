@@ -5,7 +5,7 @@ public class CoinLineSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject coins_moving;
     public int coinCount = 10;
-    public float spacing = 1.2f;
+    public float spacing = 2f;
 
     public void SpawnCoinLine(Vector3 startPosition)
     {
