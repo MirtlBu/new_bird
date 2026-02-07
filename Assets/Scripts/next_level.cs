@@ -18,7 +18,7 @@ public class next_level_script : MonoBehaviour
         {
             coinsCollected = PlayerData.Instance.score;
         }
-        nameLabel.text = $"{playerName} the borb gathered {coinsCollected} coin{(coinsCollected != 1 ? "s" : "")}, but it’s not enough, so let’s fly to another city.";
+        nameLabel.text = $"{playerName} helped the borb collect {coinsCollected} coin{(coinsCollected != 1 ? "s" : "")}, but it’s not enough, so let’s fly to another city.";
     }
 
     private void OnEnable()

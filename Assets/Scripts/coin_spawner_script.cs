@@ -52,6 +52,5 @@ public class coin_spawner_script : MonoBehaviour
                 return;
             }
         }
-        
     }
 }

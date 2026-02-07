@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2e7e2b348a4244bf38a94e39fc5d6f4d
+guid: 7ccbcef00cee24d6c9e665abac7d2965
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4176286611399745953
-    second: JEMA GER 1640-11_0
+      213: -3824817143258884103
+    second: pantti_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JEMA GER 1640-11_0
+      name: pantti_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 18
-        width: 1674
-        height: 1674
+        x: 6
+        y: 17
+        width: 294
+        height: 514
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5e5c4f2479da06c0800000000000000
-      internalID: -4176286611399745953
+      spriteID: 9f7da3da2158beac0800000000000000
+      internalID: -3824817143258884103
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      JEMA GER 1640-11_0: -4176286611399745953
+      pantti_0: -3824817143258884103
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -20,6 +20,5 @@ public class building_move : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     
 }
