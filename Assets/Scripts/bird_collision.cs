@@ -38,7 +38,6 @@ public class BirdCollision : MonoBehaviour
                 minViewport.y >= 0 && maxViewport.y <= 1)
             {
                 hasEnteredScreen = true;
-                Debug.Log("Bird has fully entered screen");
             }
             return;
         }

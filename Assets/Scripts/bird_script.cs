@@ -12,9 +12,11 @@ public class bird_script : MonoBehaviour
     public float leaveTime = 2f;
     private PlayerInputActions input;      
     private bool canControl = false;
+    private Animator anim;
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         input = new PlayerInputActions();
     }
 
@@ -36,7 +38,11 @@ public class bird_script : MonoBehaviour
     void Update()
     {
         if (!canControl) return;
-        if (input.Player.Flap.WasPressedThisFrame())
+
+        bool isFlapping = input.Player.Flap.IsPressed();
+        anim.SetBool("isFlying", isFlapping);
+
+        if (isFlapping)
         {
             bird.linearVelocity = Vector2.up * strength;
         }

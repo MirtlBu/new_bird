@@ -1,21 +1,42 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is createdpublic float speed = 0.5f;public float speed = 0.5f;           // скорость движения облака
-    
-    public float speed = 0.5f;
-    public float resetOffset = 20f;
+public class CloudLooper : MonoBehaviour{
+    private GameSpeed gameSpeed;
 
-    
+    private SpriteRenderer sr;
+    private float spriteWidth;
+    private bool spawnedNext = false;
+
+    void Start()
+    {
+        gameSpeed = FindObjectOfType<GameSpeed>();
+        sr = GetComponent<SpriteRenderer>();
+        spriteWidth = sr.bounds.size.x;
+    }
 
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        transform.position += Vector3.left * gameSpeed.speed / 10 * Time.deltaTime;
 
-        if (transform.position.x < -resetOffset)
+        float leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero).x;
+
+        if (!spawnedNext && transform.position.x < spriteWidth / 2f)
         {
-            transform.position += Vector3.right * resetOffset * 2f;
+            SpawnNext();
+            spawnedNext = true;
         }
+
+        if (transform.position.x + spriteWidth / 2f < leftEdge)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void SpawnNext()
+    {
+        Vector3 newPos = transform.position;
+        newPos.x += spriteWidth;
+
+        Instantiate(gameObject, newPos, Quaternion.identity);
     }
 }
