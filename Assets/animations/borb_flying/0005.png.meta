@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4408dab0eeee84817b0e8216754dc50f
+guid: d7910505de10443c5a4fe5b32dee8c8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 296631442738938877
-    second: bird 2_0
+      213: -7839056689181992794
+    second: 0005_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bird 2_0
+      name: 0005_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 188
-        width: 1581
-        height: 1550
+        x: 126
+        y: 613
+        width: 2502
+        height: 2208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df38aadb9b8dd1400800000000000000
-      internalID: 296631442738938877
+      spriteID: 6a8582b6973163390800000000000000
+      internalID: -7839056689181992794
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bird 2_0: 296631442738938877
+      0005_0: -7839056689181992794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

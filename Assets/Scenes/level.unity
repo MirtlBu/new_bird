@@ -128,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 30027447}
-  - component: {fileID: 30027446}
   m_Layer: 0
   m_Name: enviroment
   m_TagString: Untagged
@@ -136,18 +135,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &30027446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30027445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57783de510d274dc283cb5773c56f36a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!4 &30027447
 Transform:
   m_ObjectHideFlags: 0
@@ -942,6 +929,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1113859647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113859649}
+  - component: {fileID: 1113859648}
+  m_Layer: 0
+  m_Name: PowerUpSpawnerObj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1113859648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113859647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e17de76733e7400d934ea3e68ddac87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUpSpawner
+  powerUpPrefab: {fileID: 3747579827695627630, guid: 573468575aafb4ddfaf59da90f2daa5f, type: 3}
+  minYMargin: 2
+  maxYMargin: 1
+  checkRadius: 0.5
+  buildingLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!4 &1113859649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113859647}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1129265453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1444601640}
   - component: {fileID: 1444601639}
+  - component: {fileID: 1444601641}
   m_Layer: 0
   m_Name: coin_spawner
   m_TagString: Untagged
@@ -1159,6 +1198,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1444601641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444601638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b1631a877524c9087c059341d4f925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  coins_moving: {fileID: 2696682214883009821, guid: 60d4ccae698504341a752f71ea9a4a9c, type: 3}
+  coinCount: 10
+  spacing: 2
 --- !u!1 &1606821352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1306,7 @@ GameObject:
   - component: {fileID: 1849711610}
   - component: {fileID: 1849711609}
   - component: {fileID: 1849711611}
+  - component: {fileID: 1849711612}
   m_Layer: 6
   m_Name: bird
   m_TagString: bird
@@ -1335,7 +1390,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -5064401156898091283, guid: 01cb9a8b1c9ca42a8a73a1400c993930, type: 3}
+  m_Sprite: {fileID: -4209461767521648114, guid: aa0500f438b5b469fb52ed32acb4a684, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1355,7 +1410,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.47, y: 1.76, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.1425, y: 0.1425, z: 0.1425}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1412,8 +1467,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 1.48
+  m_Offset: {x: 0, y: -0.055464506}
+  m_Radius: 8.191151
 --- !u!114 &1849711611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1428,6 +1483,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BirdCollision
   buildingCounter: 0
   bird: {fileID: 0}
+--- !u!95 &1849711612
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849711605}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91f1549b773ad4b44bc39bf6250a8c87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1887844460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,3 +1760,4 @@ SceneRoots:
   - {fileID: 1444601640}
   - {fileID: 1887844462}
   - {fileID: 183714074}
+  - {fileID: 1113859649}
