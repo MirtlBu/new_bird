@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7ccbcef00cee24d6c9e665abac7d2965
+guid: 2ae117c920eb4482bb17925c0e56d507
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3824817143258884103
-    second: pantti_0
+      213: -2595679875909405012
+    second: gold_star_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pantti_0
+      name: gold_star_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 17
-        width: 294
-        height: 514
+        x: 0
+        y: 0
+        width: 263
+        height: 266
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f7da3da2158beac0800000000000000
-      internalID: -3824817143258884103
+      spriteID: ca63ac5c7ea4afbd0800000000000000
+      internalID: -2595679875909405012
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pantti_0: -3824817143258884103
+      gold_star_0: -2595679875909405012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
