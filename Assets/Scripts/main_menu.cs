@@ -6,18 +6,26 @@ using System.Collections;
 public class main_menu_script : MonoBehaviour
 {
     private UIDocument document;
-    private Button button;
+    private Button buttonStart;
+    private Button buttonLeaderboard;
 
     private void Start()
     {
         document = GetComponent<UIDocument>();
-        button = document.rootVisualElement.Q<Button>("start");
 
-        button.RegisterCallback<ClickEvent>(OnPlayGameClick);
+        buttonStart = document.rootVisualElement.Q<Button>("start");
+        buttonStart.RegisterCallback<ClickEvent>(OnPlayGameClick);
+
+        buttonLeaderboard = document.rootVisualElement.Q<Button>("leaderboard");
+        buttonLeaderboard.RegisterCallback<ClickEvent>(LeaderboardClick);
     }
 
     private void OnPlayGameClick(ClickEvent evt)
     {
         SceneController.Instance.About();
+    }
+    private void LeaderboardClick(ClickEvent evt)
+    {
+        SceneController.Instance.Leaderboard();
     }
 }

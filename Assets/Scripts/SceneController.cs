@@ -36,4 +36,8 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("betweenlevels");
     }
+    public void Leaderboard()
+    {
+        SceneManager.LoadScene("leaderboard");
+    }
 }
